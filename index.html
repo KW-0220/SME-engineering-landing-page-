@@ -794,12 +794,11 @@ src="https://www.facebook.com/tr?id=1626725838814548&ev=PageView&noscript=1"
       "</div>" +
       '<div class="ck-card ck-next"><h3>下一步可以自行核對</h3><ol>' + r.nextSteps.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ol>" +
         '<p class="ck-note">想做六個月完整分析，或者想搵人同你睇份結果，可以用下面的按鈕。</p>' +
-        '<div class="ck-actions"><a class="btn btn-primary" href="https://wa.me/' + WA + '?text=' + encodeURIComponent("你好，我睇完 SME Clinic 工程版嘅月結單免費檢查，想搵顧問了解結果。") + '" target="_blank" rel="noopener">搵顧問</a><a class="btn btn-secondary" href="https://sme-loanflow.vercel.app">開始六個月完整分析</a><button type="button" class="btn btn-secondary" id="ck-again">檢查另一份月結單</button></div>' +
+        '<div class="ck-actions"><a class="btn btn-primary" href="https://wa.me/' + WA + '?text=' + encodeURIComponent("你好，我睇完 SME Clinic 工程版嘅月結單免費檢查，想搵顧問了解結果。") + '" target="_blank" rel="noopener">搵顧問</a><a class="btn btn-secondary" href="https://sme-loanflow.vercel.app">開始六個月完整分析</a></div>' +
         '<p class="ck-note">AI 摘要只供初步了解所提交戶口的現金流，不代表完整公司財務評估或任何融資審批結果。</p>' +
       "</div>";
     result.hidden = false;
     result.querySelectorAll("[data-tab]").forEach(function (b) { b.addEventListener("click", function () { current = Number(b.getAttribute("data-tab")); renderReport(); }); });
-    $("ck-again").addEventListener("click", function () { reports = []; result.hidden = true; status.hidden = true; clear(); form.hidden = false; drop.scrollIntoView({ behavior: "smooth", block: "center" }); });
   }
 
   function run() {
