@@ -363,6 +363,66 @@
     .wa-float { right: 16px; bottom: 16px; width: 56px; height: 56px; }
     .wa-float svg { width: 32px; height: 32px; }
   }
+
+  /* ---- Free check widget (#check) ---- */
+  .ck { max-width: 860px; margin: 0 auto; }
+  .ck-form { background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 24px; }
+  .ck-drop { border: 2px dashed rgba(255,255,255,.22); border-radius: 12px; padding: 28px 18px; text-align: center; cursor: pointer; transition: border-color .15s, background .15s; }
+  .ck-drop:hover, .ck-drop.is-drag { border-color: var(--teal); background: rgba(53,222,203,.06); }
+  .ck-drop-main { font-weight: 700; color: var(--text-hi); font-size: 1.05rem; margin-bottom: 6px; }
+  .ck-drop-help { color: var(--muted); font-size: .9rem; margin: 0; line-height: 1.6; }
+  .ck-file { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 14px; padding: 12px 14px; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; }
+  .ck-file .nm { flex: 1 1 200px; min-width: 0; color: var(--text-hi); font-weight: 600; overflow-wrap: anywhere; }
+  .ck-file .sz { color: var(--muted); font-size: .9rem; }
+  .ck-file button { background: none; border: 1px solid rgba(255,255,255,.2); color: var(--text); border-radius: 8px; padding: 8px 12px; min-height: 40px; cursor: pointer; font: inherit; }
+  .ck-file button:hover { border-color: var(--teal); color: var(--text-hi); }
+  .ck-err { margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: rgba(255,120,120,.12); border: 1px solid rgba(255,120,120,.35); color: #ffd6d6; font-size: .95rem; }
+  .ck-warn { margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: rgba(255,200,80,.12); border: 1px solid rgba(255,200,80,.35); color: #ffe9b8; font-size: .95rem; }
+  .ck-consent { display: flex; gap: 12px; align-items: flex-start; margin-top: 18px; color: var(--text); font-size: .95rem; line-height: 1.6; cursor: pointer; }
+  .ck-consent input { width: 22px; height: 22px; margin: 2px 0 0; flex: none; accent-color: var(--teal); }
+  .ck-consent a { color: var(--teal); }
+  .ck-fine { color: var(--muted); font-size: .85rem; margin: 16px 0 0; line-height: 1.6; }
+  .ck .btn[disabled] { opacity: .45; cursor: not-allowed; }
+  .ck-status { margin-top: 18px; background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 22px 24px; }
+  .ck-steps { list-style: none; padding: 0; margin: 12px 0 0; }
+  .ck-steps li { display: flex; align-items: center; gap: 12px; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.08); color: var(--text); }
+  .ck-steps li:last-child { border-bottom: 0; }
+  .ck-steps .ic { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: .8rem; font-weight: 700; background: rgba(255,255,255,.1); color: var(--muted); flex: none; }
+  .ck-steps .done .ic { background: var(--teal); color: var(--teal-ink); }
+  .ck-steps .active .ic { background: var(--steel); color: #fff; }
+  .ck-steps .error .ic { background: #c0392b; color: #fff; }
+  .ck-steps .st { margin-left: auto; color: var(--muted); font-size: .88rem; }
+  .ck-spin { width: 13px; height: 13px; border: 2px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: ckspin .9s linear infinite; }
+  @keyframes ckspin { to { transform: rotate(360deg); } }
+  .ck-result { margin-top: 18px; text-align: left; }
+  .ck-card { background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 22px 24px; margin-bottom: 14px; }
+  .ck-card h3 { color: var(--text-hi); font-size: 1.15rem; margin: 0 0 8px; }
+  .ck-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--muted); font-size: .9rem; margin-bottom: 12px; }
+  .ck-meta b { color: var(--text); font-weight: 600; }
+  .ck-summary { color: var(--text-hi); font-size: 1.05rem; line-height: 1.7; border-left: 3px solid var(--teal); padding-left: 14px; margin: 0; }
+  .ck-kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 16px; }
+  .ck-kpi { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 10px 12px; }
+  .ck-kpi .l { color: var(--muted); font-size: .8rem; }
+  .ck-kpi .v { color: var(--text-hi); font-weight: 700; font-size: 1.05rem; overflow-wrap: anywhere; }
+  .ck-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .ck-tabs button { font: inherit; font-size: .92rem; padding: 8px 14px; min-height: 40px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); background: transparent; color: var(--text); cursor: pointer; }
+  .ck-tabs button[aria-selected="true"] { background: var(--teal); color: var(--teal-ink); border-color: var(--teal); font-weight: 700; }
+  .ck-q { border-top: 1px solid rgba(255,255,255,.08); padding: 16px 0; }
+  .ck-q:first-of-type { border-top: 0; padding-top: 4px; }
+  .ck-q h4 { color: var(--text-hi); font-size: 1.05rem; margin: 0 0 8px; }
+  .ck-q .lb { color: var(--muted); font-size: .8rem; font-weight: 600; margin: 8px 0 2px; }
+  .ck-q p { margin: 0; color: var(--text); line-height: 1.65; }
+  .ck-ev { list-style: none; padding: 0; margin: 4px 0 0; font-size: .9rem; }
+  .ck-ev li { display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 6px 10px; background: rgba(255,255,255,.04); border-radius: 8px; margin-top: 6px; color: var(--text); }
+  .ck-ev .amt { font-weight: 700; color: var(--text-hi); font-variant-numeric: tabular-nums; }
+  .ck-ev .pg { color: var(--muted); }
+  .ck-q .wa { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; min-height: 40px; padding: 8px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,.2); color: var(--text-hi); text-decoration: none; font-size: .92rem; font-weight: 600; }
+  .ck-q .wa:hover { border-color: var(--teal); }
+  .ck-note { color: var(--muted); font-size: .88rem; line-height: 1.6; margin: 12px 0 0; }
+  .ck-next ol { margin: 8px 0 0; padding-left: 1.3em; color: var(--text); line-height: 1.7; }
+  .ck-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .ck-actions .btn { width: auto; }
+  @media (max-width: 720px) { .ck-kpis { grid-template-columns: 1fr 1fr; } .ck-kpis .ck-kpi:last-child { grid-column: span 2; } .ck-form, .ck-status, .ck-card { padding: 18px 16px; } }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -415,21 +475,33 @@ src="https://www.facebook.com/tr?id=1626725838814548&ev=PageView&noscript=1"
     <p class="hero-fine">AI 分析只供財務狀況評估及資料整理用途。SME Clinic 並非放債人、銀行或貸款中介。</p>
   </div>
 
-  <!-- FREE CHECK: one-month statement -->
+  <!-- FREE CHECK: one-month statement, analysed in-page via analyst.sme-clinic-ai.com API -->
   <section class="alt" id="check">
     <div class="wrap">
       <h2>免費檢查：上載 1 個月月結單，睇吓銀行會問咩</h2>
-      <p class="sub" style="margin:0 auto 32px">唔使先交齊六個月文件。揀一份最近一個月嘅公司銀行月結單，AI 幫你整理進出帳、結餘低位，同銀行審批時最常追問嘅交易，逐項有日期同頁碼依據。</p>
-      <div class="steps">
-        <div class="step reveal" style="--d:0s"><p>上載一份最近一個月嘅公司月結單 PDF，可多頁；唔使身份證、BR 或財務報表</p></div>
-        <div class="step reveal" style="--d:0.08s"><p>AI 讀取每筆交易，計算進帳、支出同結餘變化，核對期初期末</p></div>
-        <div class="step reveal" style="--d:0.16s"><p>即時睇到「銀行可能會問嘅問題」清單，唔使留電話，唔使開戶</p></div>
+      <p class="sub" style="margin:0 auto 28px">唔使先交齊六個月文件。揀一份最近一個月嘅公司銀行月結單，AI 幫你整理進出帳、結餘低位，同銀行審批時最常追問嘅交易，逐項有日期同頁碼依據。唔使留電話，唔使開戶，結果即時喺呢頁顯示。</p>
+
+      <div class="ck" id="ck">
+        <form class="ck-form" id="ck-form" novalidate>
+          <div class="ck-drop" id="ck-drop" tabindex="0" role="button" aria-describedby="ck-help">
+            <div class="ck-drop-main">拖放月結單 PDF 到這裏，或按一下選擇檔案</div>
+            <p class="ck-drop-help" id="ck-help">一次一份 PDF，可多頁，4 MB 以內。請保留交易日期、摘要、金額，以及期初和期末結餘。綜合戶口結單亦可，會逐個戶口分開顯示。</p>
+            <input type="file" id="ck-file" accept="application/pdf,.pdf" class="sr-only" aria-label="選擇月結單 PDF">
+          </div>
+          <div id="ck-file-status" aria-live="polite"></div>
+          <label class="ck-consent">
+            <input type="checkbox" id="ck-consent">
+            <span>我確認有權提交此文件，並已閱讀 <a href="https://analyst.sme-clinic-ai.com/privacy.html" target="_blank" rel="noopener">私隱政策及文件使用說明</a>，同意按所述方式處理文件以產生本次檢查。</span>
+          </label>
+          <div class="cta-row" style="margin-top:18px">
+            <button type="submit" class="btn btn-primary" id="ck-submit" disabled>開始免費檢查</button>
+            <a class="btn btn-secondary" href="https://analyst.sme-clinic-ai.com/demo-report.html?from=engineering" target="_blank" rel="noopener">先睇示範報告</a>
+          </div>
+          <p class="ck-fine">文件只喺分析請求期間存在於伺服器記憶體，唔會保留；結果只喺你呢個瀏覽器分頁顯示，離開後即消失。分析以文件內可辨識資料為準，如有缺頁或內容不清晰，會提示你處理。</p>
+        </form>
+        <div class="ck-status" id="ck-status" aria-live="polite" hidden></div>
+        <div class="ck-result" id="ck-result" hidden></div>
       </div>
-      <div class="cta-row" style="margin-top:36px">
-        <a class="btn btn-primary" href="https://analyst.sme-clinic-ai.com/?from=engineering#upload">上載月結單，免費檢查</a>
-        <a class="btn btn-secondary" href="https://analyst.sme-clinic-ai.com/demo-report.html?from=engineering">先睇示範報告</a>
-      </div>
-      <div class="steps-note">結果只反映所上載戶口同月份，供初步了解。伺服器唔會保留你嘅文件，報告只喺你瀏覽器本次工作階段可見。想做六個月完整分析，再用「開始免費財務分析」。</div>
     </div>
   </section>
 
@@ -600,5 +672,167 @@ src="https://www.facebook.com/tr?id=1626725838814548&ev=PageView&noscript=1"
   <svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.5L3 29l6.7-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-3.9-.5-5.6-1.5l-.4-.2-4 1 1-3.9-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.5 4.9.8.3 1.4.5 1.8.7.8.2 1.5.2 2 .1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
 </a>
 
+
+<script>
+/* ---- Free check widget: uploads to the SME Clinic analysis service and renders the result in-page ---- */
+(function () {
+  var API = "https://analyst.sme-clinic-ai.com/api/analyze";
+  var WA = "85298058577";
+  var MAX_MB = 4;
+  var $ = function (id) { return document.getElementById(id); };
+  var drop = $("ck-drop"), input = $("ck-file"), fileStatus = $("ck-file-status"), consent = $("ck-consent"), submit = $("ck-submit"), form = $("ck-form"), status = $("ck-status"), result = $("ck-result");
+  if (!form) return;
+  var file = null, valid = false;
+
+  function esc(t) { return String(t).replace(/[&<>"']/g, function (m) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]; }); }
+  function size(b) { return b < 1048576 ? Math.round(b / 1024) + " KB" : (b / 1048576).toFixed(1) + " MB"; }
+  function money(n, cur) { if (typeof n !== "number" || isNaN(n)) return "未能核實"; var p = cur === "HKD" ? "HK$" : (cur || "") + " "; return (n < 0 ? "−" : "") + p + Math.abs(Math.round(n)).toLocaleString("en-HK"); }
+  function update() { submit.disabled = !(valid && consent.checked); }
+  function track(name) { try { if (window.fbq) fbq("trackCustom", name); } catch (e) {} }
+
+  function renderEmpty() { fileStatus.innerHTML = ""; drop.hidden = false; update(); }
+  function renderSelected() {
+    fileStatus.innerHTML = '<div class="ck-file"><span class="nm">' + esc(file.name) + '</span><span class="sz">' + size(file.size) + '</span><button type="button" id="ck-replace">更換檔案</button><button type="button" id="ck-remove">移除</button></div>';
+    drop.hidden = true;
+    $("ck-replace").addEventListener("click", function () { input.click(); });
+    $("ck-remove").addEventListener("click", clear);
+    update();
+  }
+  function renderErr(msg) { fileStatus.innerHTML = '<div class="ck-err">' + esc(msg) + '</div>'; drop.hidden = false; valid = false; update(); }
+  function clear() { file = null; valid = false; input.value = ""; renderEmpty(); }
+
+  function inspect(f) {
+    return new Promise(function (resolve) {
+      var r1 = new FileReader();
+      r1.onload = function () {
+        var isPdf = String(r1.result || "").indexOf("%PDF") === 0;
+        var r2 = new FileReader();
+        r2.onload = function () { resolve({ isPdf: isPdf, encrypted: String(r2.result || "").indexOf("/Encrypt") > -1 }); };
+        r2.onerror = function () { resolve({ isPdf: isPdf, encrypted: false }); };
+        r2.readAsText(f.slice(Math.max(0, f.size - 65536), f.size), "latin1");
+      };
+      r1.onerror = function () { resolve({ isPdf: false, encrypted: false }); };
+      r1.readAsText(f.slice(0, 8), "latin1");
+    });
+  }
+  function handle(f) {
+    if (!f) return;
+    file = f; valid = false;
+    track("FreeCheckFileSelected");
+    if (!/\.pdf$/i.test(f.name) && f.type !== "application/pdf") return renderErr("請上載 PDF 格式的公司銀行月結單。");
+    if (f.size > MAX_MB * 1048576) return renderErr("檔案超過上限 " + MAX_MB + " MB。請換用較小的完整 PDF，不要刪去交易頁。");
+    inspect(f).then(function (info) {
+      if (!info.isPdf) return renderErr("請上載 PDF 格式的公司銀行月結單。");
+      if (info.encrypted) return renderErr("此 PDF 已加密，請使用你有權開啟的未加密副本。系統不會收集網上銀行密碼。");
+      valid = true; renderSelected();
+    });
+  }
+
+  input.addEventListener("change", function () { handle(input.files[0]); });
+  drop.addEventListener("click", function () { input.click(); });
+  drop.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); input.click(); } });
+  ["dragenter", "dragover"].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add("is-drag"); }); });
+  ["dragleave", "drop"].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove("is-drag"); }); });
+  drop.addEventListener("drop", function (e) { handle(e.dataTransfer.files[0]); });
+  consent.addEventListener("change", update);
+
+  var STEPS = [["檢查文件", "正在確認檔案格式、大小及是否加密。"], ["讀取交易", "正在把文件交給 AI 讀取每筆交易，數頁的月結單一般需要十多秒至一分鐘，請保持此頁開啟。"], ["整理問題", "正在計算收支、核對結餘，並整理銀行可能會問的事項。"]];
+  function showStatus(idx, errorAt, msg) {
+    status.hidden = false; result.hidden = true;
+    status.innerHTML = '<h3 style="margin:0 0 4px;color:var(--text-hi);font-size:1.1rem">' + (errorAt != null ? "今次未能完成檢查" : (idx >= STEPS.length ? "檢查完成" : "正在" + STEPS[idx][0])) + '</h3>' +
+      (file ? '<div class="ck-meta"><span>文件：<b>' + esc(file.name) + '</b>（' + size(file.size) + '）</span></div>' : "") +
+      '<ul class="ck-steps">' + STEPS.map(function (s, i) {
+        var cls = "", ic = String(i + 1), st = "等待中";
+        if (errorAt === i) { cls = "error"; ic = "!"; st = "未能完成"; }
+        else if (i < idx) { cls = "done"; ic = "✓"; st = "完成"; }
+        else if (i === idx) { cls = "active"; ic = '<span class="ck-spin" aria-hidden="true"></span>'; st = "進行中"; }
+        return '<li class="' + cls + '"><span class="ic" aria-hidden="true">' + ic + '</span><span>' + s[0] + '</span><span class="st">' + st + '</span></li>';
+      }).join("") + "</ul>" +
+      (errorAt != null ? '<div class="ck-err">' + esc(msg) + '</div><div class="ck-actions"><button type="button" class="btn btn-primary" id="ck-retry">重試</button><button type="button" class="btn btn-secondary" id="ck-change">更換文件</button><a class="btn btn-secondary" href="https://wa.me/' + WA + '?text=' + encodeURIComponent("你好，我喺 SME Clinic 工程版試做免費月結單檢查時遇到問題，想查詢。") + '" target="_blank" rel="noopener">WhatsApp 查詢</a></div>'
+        : '<p class="ck-note">' + (idx < STEPS.length ? STEPS[idx][1] : "") + '</p>');
+    if (errorAt != null) {
+      $("ck-retry").addEventListener("click", run);
+      $("ck-change").addEventListener("click", function () { status.hidden = true; clear(); form.hidden = false; drop.scrollIntoView({ behavior: "smooth", block: "center" }); });
+    }
+    status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  var reports = [], current = 0;
+  function evidence(ev) {
+    return (ev || []).length ? '<div class="lb">相關交易或文件頁碼</div><ul class="ck-ev">' + ev.map(function (e) {
+      return "<li>" + (e.date ? "<span>" + esc(e.date) + "</span>" : "") + (e.desc ? "<span>" + esc(e.desc) + "</span>" : "") + (e.amount ? '<span class="amt">' + esc(e.amount) + "</span>" : "") + (e.page ? '<span class="pg">第 ' + esc(e.page) + " 頁</span>" : "") + "</li>";
+    }).join("") + "</ul>" : "";
+  }
+  function waLink(category) {
+    return "https://wa.me/" + WA + "?text=" + encodeURIComponent("你好，我睇完 SME Clinic 工程版嘅月結單免費檢查，想就『" + category + "』呢項結果搵顧問了解。");
+  }
+  function renderReport() {
+    var r = reports[current];
+    var cur = r.currency, net = r.totalIn - r.totalOut;
+    var tabs = reports.length > 1 ? '<div class="ck-tabs" role="tablist">' + reports.map(function (x, i) {
+      return x.empty ? '<button type="button" disabled title="' + esc(x.note || "") + '">' + esc(x.accountLabel) + '（沒有交易）</button>'
+        : '<button type="button" role="tab" aria-selected="' + (i === current) + '" data-tab="' + i + '">' + esc(x.accountLabel) + "</button>";
+    }).join("") + "</div>" : "";
+    var notes = (r.document && r.document.notes && r.document.notes.length) ? '<div class="ck-warn">以下資料未能讀取，結果只包括可核實部分：' + r.document.notes.map(esc).join("；") + "</div>" : "";
+    var periodNote = r.period.isLatestMonth ? "" : '<p class="ck-note">此份月結單的期間為 ' + esc(r.period.label) + '，結果只反映該期間，並非現時公司狀況。</p>';
+    result.innerHTML =
+      '<div class="ck-card">' + tabs +
+        '<h3>' + esc(r.period.label) + ' 月結單免費檢查結果</h3>' +
+        '<div class="ck-meta"><span>戶口：<b>' + esc((r.account.bankLabel + " " + r.account.maskedNumber).trim() || "未能辨識") + '</b></span><span>幣種：<b>' + esc(cur) + '</b></span><span>文件：<b>' + (r.document.complete ? "已讀取全部 " + r.document.pagesTotal + " 頁" : "只讀取 " + r.document.pagesRead + " / " + r.document.pagesTotal + " 頁") + '</b></span></div>' +
+        notes + periodNote +
+        '<p class="ck-summary">' + esc(r.summary) + '</p>' +
+        '<div class="ck-kpis">' + [["期初結餘", money(r.openingBalance, cur)], ["總進帳", money(r.totalIn, cur)], ["總支出", money(r.totalOut, cur)], [net >= 0 ? "淨流入" : "淨流出", money(Math.abs(net), cur)], ["期末結餘", r.document.complete ? money(r.closingBalance, cur) : "未能核實"]].map(function (k) { return '<div class="ck-kpi"><div class="l">' + k[0] + '</div><div class="v">' + k[1] + "</div></div>"; }).join("") + "</div>" +
+        '<p class="ck-note">進帳與支出為銀行戶口的資金進出，並非營業額或盈利。共 ' + r.transactions.length + ' 筆交易，其中 ' + r.transactions.filter(function (t) { return t.confirm; }).length + ' 筆列為待確認。</p>' +
+      "</div>" +
+      '<div class="ck-card"><h3>銀行可能會問嘅問題</h3>' +
+        '<p class="ck-note" style="margin:0 0 10px">以下是根據呢份月結單整理、銀行審批時常會追問嘅事項，每項附交易同頁碼依據。「可能會問」唔代表銀行一定會問，亦唔代表有問題；先準備好答案，就唔會臨時答唔出。</p>' +
+        (r.attention.length ? r.attention.map(function (q) {
+          return '<div class="ck-q"><h4>' + esc(q.title) + '</h4><div class="lb">報告觀察</div><p>' + esc(q.observation) + '</p><div class="lb">需要準備嘅答案</div><p>' + esc(q.confirm) + '</p>' + evidence(q.evidence) +
+            '<a class="wa" href="' + waLink(q.category) + '" target="_blank" rel="noopener">就呢項搵顧問</a></div>';
+        }).join("") : '<p class="ck-note">此份月結單未有需要特別準備答案的項目。有任何結果想了解，都可以搵顧問查詢。</p>') +
+        ((r.notFound || []).length ? '<p class="ck-note">' + r.notFound.map(esc).join(" ") + "</p>" : "") +
+      "</div>" +
+      '<div class="ck-card ck-next"><h3>下一步可以自行核對</h3><ol>' + r.nextSteps.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ol>" +
+        '<p class="ck-note">想做六個月完整分析，或者想搵人同你睇份結果，可以用下面的按鈕。</p>' +
+        '<div class="ck-actions"><a class="btn btn-primary" href="https://wa.me/' + WA + '?text=' + encodeURIComponent("你好，我睇完 SME Clinic 工程版嘅月結單免費檢查，想搵顧問了解結果。") + '" target="_blank" rel="noopener">搵顧問</a><a class="btn btn-secondary" href="https://sme-loanflow.vercel.app">開始六個月完整分析</a><button type="button" class="btn btn-secondary" id="ck-again">檢查另一份月結單</button></div>' +
+        '<p class="ck-note">AI 摘要只供初步了解所提交戶口的現金流，不代表完整公司財務評估或任何融資審批結果。</p>' +
+      "</div>";
+    result.hidden = false;
+    result.querySelectorAll("[data-tab]").forEach(function (b) { b.addEventListener("click", function () { current = Number(b.getAttribute("data-tab")); renderReport(); }); });
+    $("ck-again").addEventListener("click", function () { reports = []; result.hidden = true; status.hidden = true; clear(); form.hidden = false; drop.scrollIntoView({ behavior: "smooth", block: "center" }); });
+  }
+
+  function run() {
+    if (!file || !valid) return;
+    form.hidden = true;
+    showStatus(0);
+    showStatus(1);
+    var started = Date.now();
+    fetch(API, { method: "POST", headers: { "Content-Type": "application/octet-stream" }, body: file, cache: "no-store" })
+      .then(function (res) {
+        if (res.status === 504 || res.status === 502) throw new Error("分析在 " + Math.round((Date.now() - started) / 1000) + " 秒後逾時（伺服器回應 " + res.status + "）。請重試；如文件頁數很多，可先試較短的月結單。");
+        return res.json().catch(function () { throw new Error("分析服務回應異常（HTTP " + res.status + "），請稍後重試。"); });
+      })
+      .then(function (data) {
+        if (!data.ok) throw new Error(data.message || "今次未能完成分析，請重試或更換文件。");
+        showStatus(2);
+        reports = (data.reports && data.reports.length ? data.reports : [data.report]);
+        current = reports.findIndex(function (x) { return !x.empty; });
+        showStatus(3);
+        status.hidden = true;
+        track("FreeCheckComplete");
+        renderReport();
+        result.scrollIntoView({ behavior: "smooth", block: "start" });
+      })
+      .catch(function (e) {
+        var msg = e && e.message ? e.message : "";
+        if (!msg || /Failed to fetch|NetworkError|Load failed/i.test(msg)) msg = "未能連接分析服務，請檢查網絡後重試。";
+        showStatus(1, 1, msg);
+      });
+  }
+  form.addEventListener("submit", function (e) { e.preventDefault(); if (!valid) return; if (!consent.checked) { consent.focus(); return; } track("FreeCheckStart"); run(); });
+  renderEmpty();
+})();
+</script>
 </body>
 </html>
